@@ -7,7 +7,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss'],
+    extensions: ['', '.js', '.jsx', '.scss', '.css'],
   },
   entry: [
     'webpack-dev-server/client?http://localhost:3000',

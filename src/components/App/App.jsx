@@ -5,9 +5,9 @@ import ResultView from '../ResultView'
 
 const App = ({ result, solving, ...other }) => (
   <div>
-    <SolveButton {...other} solving={solving} />
+    <SolveButton solving={solving} {...other} />
     {result === undefined ? null : (
-      <ResultView result={result}, solving={solving} />
+      <ResultView result={result} solving={solving} />
     )}
   </div>
 )

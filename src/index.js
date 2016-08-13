@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import reducers from './reducers'
 import { solverSaga, keyboardHandler } from './sagas'
-import App from './components/App'
+import AppContainer from './containers/AppContainer'
 import { SolverApi } from './lib'
 
 const sagaMiddleware = createSagaMiddleware()
@@ -21,7 +21,7 @@ sagaMiddleware.run(keyboardHandler)
 
 render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 )

@@ -1,5 +1,5 @@
 import { delay } from 'redux-saga'
-import { race, call, fork, take } from 'redux-saga/effects'
+import { race, call, take } from 'redux-saga/effects'
 import { putp } from '../actions/utils'
 
 function* solve(solver) {
@@ -13,14 +13,16 @@ function* solve(solver) {
     }
   } catch (e) {
     console.error(e)  // eslint-disable-line no-console
+  } finally {
+    return true
   }
 }
 
 export default function* solverSaga(solver) {
   while (true) {
-    yield take('START')
+    yield take('SOLVE')
     const result = yield race({
-      finished: fork(solve, solver),
+      finished: call(solve, solver),
       canceled: take('CANCEL'),
     })
     if (result.finished) yield putp('FINISH')

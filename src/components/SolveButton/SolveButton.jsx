@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import './SolveButton.scss';
 
 const SolveButton = ({ solving, solve, cancel }) => (
-  <button onclick={solving ? cancel : solve}>
+  <button onClick={solving ? cancel : solve}>
     {solving ? 'Cancel' : 'Solve'}
   </button>
 )

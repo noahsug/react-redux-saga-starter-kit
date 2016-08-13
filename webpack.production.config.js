@@ -21,9 +21,7 @@ const config = {
       include: path.join(__dirname, 'src'),
     }, {
       test: /\.scss$/,
-      loaders: ['style',
-                'css',
-                'sass'],
+      loaders: ['style', 'css', 'sass'],
     }],
   },
   plugins: [
